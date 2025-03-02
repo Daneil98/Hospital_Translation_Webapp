@@ -1,0 +1,12 @@
+{
+    "version": 2,
+    "builds": [{
+        "src": "HCT/wsgi.py",
+        "use": "@vercel/python",
+        "config": { "maxLamdaSize": "15mb", "runtime": "python3.12.5" }
+    }],
+    "routes": [{
+        "src": "/(.*)",
+        "dest": "HCT/wsgi.py"
+    }]
+}
