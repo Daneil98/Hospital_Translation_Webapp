@@ -23,6 +23,7 @@ multidict==6.1.0
 mypy-extensions==1.0.0
 packaging==24.2
 propcache==0.3.0
+psycopg2==2.9.10
 pydub==0.25.1
 python-dotenv==1.0.1
 requests==2.32.3
