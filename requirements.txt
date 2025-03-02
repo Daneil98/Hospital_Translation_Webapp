@@ -36,5 +36,4 @@ websockets==15.0
 whisper==1.1.10
 yarl==1.18.3
 gunicorn==23.0.0
-dj-database-url
-psycog2
+dj-database-url==2.3.0
