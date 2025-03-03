@@ -95,7 +95,7 @@ def dashboard(request):
 def transcribe(request):
     return render(request, 'speech_translate.html')
 
-
+@csrf_exempt
 async def transcribe_audio(file_path):
     deepgram = Deepgram(DEEPGRAM_API_KEY)
 
@@ -109,7 +109,7 @@ async def transcribe_audio(file_path):
     
     return transcript
 
-@login_required
+
 @csrf_exempt
 def upload_audio(request):
     if request.method == 'POST' and request.FILES.get('audio'):
