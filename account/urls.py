@@ -14,6 +14,6 @@ urlpatterns = [
     path('dashboard/', views.dashboard, name='dashboard'),
     path('register/', views.register, name='register'),
     path('edit/', views.edit, name='edit'),
-    path('speech_translate', views.transcribe, name='speech_translate'),
+    path('speech_translate/', views.transcribe, name='speech_translate'),
     path('upload/', views.upload_audio, name='upload'),
 ]
