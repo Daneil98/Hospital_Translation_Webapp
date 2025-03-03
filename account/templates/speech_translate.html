@@ -19,7 +19,7 @@
             let cookieValue = null;
             if (document.cookie && document.cookie !== '') {
                 const cookies = document.cookie.split(';');
-                for (let i = 0; i < cookies.length; i++) {
+                for (let i = 0; cookies.length; i++) {
                     const cookie = cookies[i].trim();
                     if (cookie.substring(0, name.length + 1) === (name + '=')) {
                         cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
@@ -114,7 +114,7 @@
                 const response = await fetch('https://api.deepgram.com/v1/listen', {
                     method: 'POST',
                     headers: {
-                        'Authorization': 'Token c556160c118371fb850abbfabd2f314787da8bea',
+                        'Authorization': 'Token YOUR_DEEPGRAM_API_KEY',
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
