@@ -42,10 +42,10 @@ def register(request):
             new_user.save()
             # Create the user profile
             Profile.objects.create(user=new_user)
-            return render(request, 'account/register_done.html', {'new_user': new_user})
+            return render(request, 'register_done.html', {'new_user': new_user})
     else:
         user_form = UserRegistrationForm()
-    return render(request, 'account/register.html', {'user_form': user_form})
+    return render(request, 'register.html', {'user_form': user_form})
 
 
 def user_login(request):
@@ -57,14 +57,14 @@ def user_login(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                return render(request, 'account/dashboard.html')
+                return render(request, 'dashboard.html')
             else:
                 return HttpResponse('Disabled account')
         else:
             return HttpResponse('Invalid login')
     else:
         form = LoginForm()
-    return render(request, 'account/login.html', {'form': form})
+    return render(request, 'login.html', {'form': form})
 
 
 @login_required
@@ -79,7 +79,7 @@ def edit(request):
             messages.error(request, 'Error updating your profile')
     else:
         user_form = UserEditForm(instance=request.user)
-    return render(request, 'account/edit.html', {'user_form': user_form, 'section': 'edit'})
+    return render(request, 'edit.html', {'user_form': user_form, 'section': 'edit'})
 
 
 
@@ -88,12 +88,12 @@ def edit(request):
 
 @login_required
 def dashboard(request):
-    return render(request, 'account/dashboard.html')
+    return render(request, 'dashboard.html')
 
 
 @login_required
 def transcribe(request):
-    return render(request, 'account/speech_translate.html')
+    return render(request, 'speech_translate.html')
 
 
 async def transcribe_audio(file_path):
